@@ -1,0 +1,17 @@
+D:\MEGA\puc\aed\codes\analise\bin\Debug\net8.0\analise.exe
+D:\MEGA\puc\aed\codes\analise\bin\Debug\net8.0\analise.deps.json
+D:\MEGA\puc\aed\codes\analise\bin\Debug\net8.0\analise.runtimeconfig.json
+D:\MEGA\puc\aed\codes\analise\bin\Debug\net8.0\analise.dll
+D:\MEGA\puc\aed\codes\analise\bin\Debug\net8.0\analise.pdb
+D:\MEGA\puc\aed\codes\analise\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\MEGA\puc\aed\codes\analise\obj\Debug\net8.0\analise.csproj.AssemblyReference.cache
+D:\MEGA\puc\aed\codes\analise\obj\Debug\net8.0\analise.GeneratedMSBuildEditorConfig.editorconfig
+D:\MEGA\puc\aed\codes\analise\obj\Debug\net8.0\analise.AssemblyInfoInputs.cache
+D:\MEGA\puc\aed\codes\analise\obj\Debug\net8.0\analise.AssemblyInfo.cs
+D:\MEGA\puc\aed\codes\analise\obj\Debug\net8.0\analise.csproj.CoreCompileInputs.cache
+D:\MEGA\puc\aed\codes\analise\obj\Debug\net8.0\analise.csproj.Up2Date
+D:\MEGA\puc\aed\codes\analise\obj\Debug\net8.0\analise.dll
+D:\MEGA\puc\aed\codes\analise\obj\Debug\net8.0\refint\analise.dll
+D:\MEGA\puc\aed\codes\analise\obj\Debug\net8.0\analise.pdb
+D:\MEGA\puc\aed\codes\analise\obj\Debug\net8.0\analise.genruntimeconfig.cache
+D:\MEGA\puc\aed\codes\analise\obj\Debug\net8.0\ref\analise.dll
