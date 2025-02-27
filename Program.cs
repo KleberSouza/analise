@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Net.Http;
 using System.Diagnostics;
@@ -8,7 +8,7 @@ class Program
 {
     static Pessoa[] pessoas; // Vetor para armazenar os dados
 
-    static async Task Main()
+    static void Main()
     {
         while (true)
         {
@@ -23,7 +23,7 @@ class Program
             switch (opcao)
             {
                 case "1":
-                    await GerarArquivoDadosAsync();
+                    GerarArquivoDadosAsync();
                     break;
                 case "2":
                     CarregarArquivoDados();
@@ -41,7 +41,7 @@ class Program
     }
 
     // 1️⃣ GERAR ARQUIVO DE DADOS
-    static async Task GerarArquivoDadosAsync()
+    static void GerarArquivoDadosAsync()
     {
         Console.Write("Quantas pessoas deseja gerar? ");
         if (!int.TryParse(Console.ReadLine(), out int quantidade) || quantidade <= 0)
@@ -50,41 +50,22 @@ class Program
             return;
         }
 
-        int maxPorRequisicao = 5000; // API RandomUser limita 5000 por vez
-        int totalBaixado = 0;
         List<Pessoa> listaPessoas = new List<Pessoa>();
 
-        while (totalBaixado < quantidade)
-        {
-            int restante = quantidade - totalBaixado;
-            int quantidadeAtual = Math.Min(restante, maxPorRequisicao);
-
-            string url = $"https://randomuser.me/api/?results={quantidadeAtual}&nat=us";
-            using HttpClient client = new HttpClient();
-            string respostaJson = await client.GetStringAsync(url);
-
-            dynamic dados = JsonConvert.DeserializeObject(respostaJson);
-
-            int codigo = totalBaixado + 1;
-            foreach (var item in dados.results)
-            {
-                listaPessoas.Add(new Pessoa
+        for(int i = 1;i<=quantidade;i++){
+            listaPessoas.Add(new Pessoa
                 {
-                    Codigo = codigo++,
-                    Id = item.id.value != null ? item.id.value.ToString() : "Sem ID",
-                    Nome = $"{item.name.first} {item.name.last}",
-                    Email = item.email,
-                    Telefone = item.phone,
-                    Celular = item.cell,
-                    Localizacao = $"{item.location.city}, {item.location.state} - {item.location.country}",
-                    Idade = item.dob.age,
-                    Foto = item.picture.large
+                    Codigo = i,
+                    Id = i.ToString(),
+                    Nome = $"Nome {i}",
+                    Email = $"Email {i}",
+                    Telefone = $"Telefone {i}",
+                    Celular = $"Celular {i}",
+                    Localizacao = $"Localizacao {i}",
+                    Idade = i%100 + 25,
+                    Foto = $"Foto {i}",
                 });
-            }
-
-            totalBaixado += quantidadeAtual;
-            Console.WriteLine($"Baixados {totalBaixado}/{quantidade} registros...");
-        }
+        }        
 
         // Salvar no arquivo
         string caminhoArquivo = "dados.txt";
